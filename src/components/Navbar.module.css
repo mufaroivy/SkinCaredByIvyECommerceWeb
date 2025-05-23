@@ -1,0 +1,242 @@
+.navbar {
+    background-color: #fce4ec; /* Light pink background */
+    padding: 1rem 1.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1000; /* Ensure the navbar is always on top */
+    width: 95%
+  }
+  
+  .brandContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+  }
+  
+  .brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e91e63; /* Pink brand color */
+    text-decoration: none;
+  }
+  
+  .navLinks {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navItem {
+    margin-left: 1rem;
+  }
+  
+  .navLink {
+    color: #3f51b5; /* Blue link color */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .navLink:hover {
+    color: #283593; /* Darker blue on hover */
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdownToggle {
+    composes: navLink;
+    cursor: pointer;
+  }
+  
+  .dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #f8bbd0; /* Light pink border */
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    padding: 0.5rem 0;
+    min-width: 12rem; /* Increased width for "Skin Issues" */
+    z-index: 1000;
+    display: none; /* Initially hidden */
+    z-index: 999; /* Ensure the dropdown is below the navbar but above other content */
+  }
+  
+  .dropdownMenu.show {
+    display: block;
+  }
+  
+  .dropdownItem {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1.5rem; /* Increased padding */
+    clear: both;
+    font-weight: bold;
+    color: #e91e63; /* Pink dropdown text */
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    text-decoration: none;
+  }
+  
+  .dropdownItem:hover,
+  .dropdownItem:focus {
+    background-color: #f48fb1; /* Slightly darker pink on hover */
+    color: white;
+  }
+  
+  .cartLink,
+  .loginLink {
+    composes: navLink;
+    margin-left: 1rem;
+  }
+  
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #e91e63; /* Pink hamburger color */
+  }
+  
+  .mobileMenu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+    background-color: #fce4ec;
+    border-left: 1px solid #f8bbd0;
+    box-shadow: -0.25rem 0 0.5rem rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    padding: 1rem;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 0 0 0 0.5rem;
+    margin-top: 45px;
+  }
+  
+  .mobileMenu.open {
+    display: flex;
+  }
+  
+  .mobileMenuItem {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: bold;
+    color: #3f51b5;
+    text-decoration: none;
+    width: auto;
+    cursor: pointer;
+  }
+  
+  .mobileMenuItem:hover {
+    background-color: #f48fb1;
+    color: white;
+  }
+  
+  .mobileSubMenu {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+  }
+  
+  .mobileSubMenuItem {
+    padding: 0.5rem 1rem;
+    text-align: left;
+    font-weight: bold;
+    color: #e91e63;
+    text-decoration: none;
+    width: auto;
+    cursor: pointer;
+  }
+  
+  .mobileSubMenuItem:hover {
+    background-color: #f48fb1;
+    color: white;
+  }
+  
+  .userIconContainer {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+  }
+  
+  .userInitialCircle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #a78bfa; /* Light purple */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .cartIconContainer {
+    position: relative;
+    cursor: pointer;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cartCount {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    background-color: #e91e63;
+    color: white;
+    border-radius: 50%;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+  }
+  
+  @media (max-width: 768px) {
+    .navLinks {
+      display: none;
+    }
+    .hamburger {
+      display: block;
+    }
+    .brand {
+      font-size: 1.75rem;
+    }
+    .userIconContainer {
+      margin-left: 0; /* Adjust for mobile */
+      margin-top: 0.5rem; /* Add some spacing */
+    }
+    .cartIconContainer {
+      margin-left: 1rem; /* Adjust for mobile */
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .mobileMenu {
+      display: none !important;
+    }
+    .hamburger {
+      display: none !important;
+    }
+    .navLinks {
+      display: flex !important;
+    }
+    .userIconContainer {
+      margin-left: 1rem;
+    }
+    .cartIconContainer {
+      margin-left: 1rem;
+    }
+  }

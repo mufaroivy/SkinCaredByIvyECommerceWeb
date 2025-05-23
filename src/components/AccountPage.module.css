@@ -1,0 +1,635 @@
+.accountPage {
+  display: flex;
+  min-height: 80vh;
+  background-color: #f8f8f8;
+}
+
+.accountSidebar {
+  width: 250px;
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  flex-shrink: 0; /* Added: Prevent sidebar from shrinking */
+}
+
+.sidebarTitle {
+  font-size: 1.5rem;
+  color: #e91e63;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.sidebarNav {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebarNav li {
+  margin-bottom: 1rem;
+}
+
+.sidebarLink {
+  display: flex;
+  align-items: center;
+  color: #555;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.2s ease; /* Modified: Smooth transition for all properties */
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.sidebarLink:hover {
+  color: #e91e63;
+  background-color: #fde0e7;
+  transform: translateX(5px); /* Added: Slight slide effect */
+}
+
+.sidebarIcon {
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.logoutButton {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease; /* Modified: Smooth transition for all properties */
+  width: 100%;
+  text-align: left;
+}
+
+.logoutButton:hover {
+  color: #e91e63;
+  background-color: #fde0e7;
+  transform: translateX(5px); /* Added: Slight slide effect */
+}
+
+
+.accountContent {
+  flex: 1;
+  padding: 2rem;
+}
+
+.accountSection {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  color: #e91e63;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e91e63;
+  padding-bottom: 0.5rem;
+}
+
+.welcomeMessage {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.accountSummary {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+.editProfileLink {
+  display: inline-block;
+  color: #2196f3;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: color 0.2s ease;
+}
+
+.editProfileLink:hover {
+  color: #1565c0;
+  text-decoration: underline;
+}
+
+.orderList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.orderItem {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  line-height: 1.7;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.orderItem p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.orderItem strong {
+  color: #e91e63;
+}
+
+.viewDetailsLink {
+  color: #2196f3;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-size: 1rem;
+}
+
+.viewDetailsLink:hover {
+  color: #1565c0;
+  text-decoration: underline;
+}
+
+.editForm {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.inputField {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1.1rem;
+  transition: border-color 0.2s ease;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #e91e63;
+  box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+}
+.passwordInputContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.passwordToggleButton {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    color: #777;
+    transition: color 0.2s ease;
+}
+
+.passwordToggleButton:hover {
+    color: #e91e63;
+}
+
+
+.formActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: flex-end; /* Added: Align buttons to the right */
+}
+
+/* --- Button Styling --- */
+
+.buttonIcon { /* Added: For consistent icon spacing within buttons */
+  margin-right: 0.5rem;
+}
+
+.saveButton {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem; /* Modified: More rounded */
+  font-size: 1rem; /* Modified: Consistent font size */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Modified: Smooth transition for all properties */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added: Subtle shadow */
+}
+
+.saveButton:hover {
+  background-color: #43A047; /* Modified: Darker green */
+  transform: translateY(-1px); /* Added: Slight upward movement */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Added: Larger shadow on hover */
+}
+
+.cancelButton {
+  background-color: #9E9E9E; /* Modified: Grey */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem; /* Modified: More rounded */
+  font-size: 1rem; /* Modified: Consistent font size */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Modified: Smooth transition for all properties */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added: Subtle shadow */
+}
+
+.cancelButton:hover {
+  background-color: #757575; /* Modified: Darker grey */
+  transform: translateY(-1px); /* Added: Slight upward movement */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Added: Larger shadow on hover */
+}
+
+.profileInfo {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    line-height: 1.7;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.editButton {
+  background-color: #2196F3; /* Modified: Blue */
+  color: white;
+  padding: 0.9rem 1.9rem;
+  border: none;
+  border-radius: 0.5rem; /* Modified: More rounded */
+  font-size: 1rem; /* Modified: Consistent font size */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Modified: Smooth transition for all properties */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  align-self: flex-start;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added: Subtle shadow */
+}
+
+.editButton:hover {
+  background-color: #1976D2; /* Modified: Darker blue */
+  transform: translateY(-1px); /* Added: Slight upward movement */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Added: Larger shadow on hover */
+}
+
+.deleteButton {
+  background-color: #F44336; /* Modified: Red */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem; /* Modified: More rounded */
+  font-size: 1rem; /* Modified: Consistent font size */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Modified: Smooth transition for all properties */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added: Subtle shadow */
+}
+
+.deleteButton:hover {
+  background-color: #D32F2F; /* Modified: Darker red */
+  transform: translateY(-1px); /* Added: Slight upward movement */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Added: Larger shadow on hover */
+}
+
+.addPaymentButton,
+.addAddressButton { /* Combined for consistent styling */
+  background-color: #9C27B0; /* Modified: Purple */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem; /* Modified: More rounded */
+  font-size: 1rem; /* Modified: Consistent font size */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Modified: Smooth transition for all properties */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem; /* Modified: Increased margin-top */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added: Subtle shadow */
+}
+
+.addPaymentButton:hover,
+.addAddressButton:hover {
+  background-color: #7B1FA2; /* Modified: Darker purple */
+  transform: translateY(-1px); /* Added: Slight upward movement */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Added: Larger shadow on hover */
+}
+
+/* --- Payment Methods Section --- */
+.paymentList { /* Added: New styles for payment list container */
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  line-height: 1.7;
+  font-size: 1.1rem;
+  display: flex; /* Added: Flex for column layout */
+  flex-direction: column; /* Added: Column layout */
+  gap: 1.5rem; /* Added: Spacing between items */
+}
+
+.paymentItem { /* Added: New styles for individual payment method */
+  border: 1px solid #eee;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: #fdfdfd; /* Slightly off-white background */
+}
+
+.paymentDisplay { /* Added: For the display part of payment item */
+  flex-grow: 1;
+}
+
+.paymentEditForm { /* Added: For the edit form within payment item */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.paymentActions { /* Added: For buttons within payment item */
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* --- Addresses Section --- */
+.addressCard {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  /* position: relative; */ /* Removed: No longer needed with flex and actions inside */
+  display: flex; /* Added: Flex for column layout */
+  flex-direction: column; /* Added: Column layout */
+  gap: 0.5rem; /* Added: Spacing between elements */
+}
+
+.addressCard h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem; /* Modified: Reduced margin */
+}
+
+.addressEditForm { /* Added: For the edit form within address card */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.addressActions { /* Added: For buttons within address card */
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end; /* Align buttons to the right */
+}
+
+.editAddressButton { /* Modified: Removed position absolute, now handled by flex in .addressActions */
+  background-color: #2196f3;
+  color: white;
+  padding: 0.75rem 1.5rem; /* Modified: Consistent padding */
+  border: none;
+  border-radius: 0.5rem; /* Modified: More rounded */
+  font-size: 1rem; /* Modified: Consistent font size */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Modified: Smooth transition for all properties */
+  /* REMOVED: position: absolute; top: 1.5rem; right: 1.5rem; */
+  white-space: nowrap;
+  display: flex; /* Added: For icon alignment */
+  align-items: center; /* Added: For icon alignment */
+  gap: 0.5rem; /* Added: For icon spacing */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added: Subtle shadow */
+}
+
+.editAddressButton:hover {
+  background-color: #1976d2;
+  transform: translateY(-1px); /* Added: Slight upward movement */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Added: Larger shadow on hover */
+}
+
+
+.addAddressButton{
+  background-color: #9C27B0; /* Modified: Purple */
+  color: white;
+  padding: 0.75rem 1.5rem; /* Modified: Consistent padding */
+  border: none;
+  border-radius: 0.5rem; /* Modified: More rounded */
+  font-size: 1rem; /* Modified: Consistent font size */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Modified: Smooth transition for all properties */
+  margin-top: 1.5rem; /* Modified: Increased margin-top */
+  white-space: nowrap;
+  display: flex; /* Added: For icon alignment */
+  align-items: center; /* Added: For icon alignment */
+  gap: 0.5rem; /* Added: For icon spacing */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added: Subtle shadow */
+}
+.addAddressButton:hover{
+  background-color: #7B1FA2; /* Modified: Darker purple */
+  transform: translateY(-1px); /* Added: Slight upward movement */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Added: Larger shadow on hover */
+}
+
+/* --- Custom Modal Styling --- */
+.modalOverlay { /* Added: Full-screen overlay */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure modal is on top */
+}
+
+.modalContent { /* Added: Modal content box */
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  animation: fadeInScale 0.3s ease-out; /* Added: Animation */
+}
+
+.modalMessage { /* Added: Message text in modal */
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.modalActions { /* Added: Buttons container in modal */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.modalConfirmButton { /* Added: Confirm button in modal */
+  background-color: #F44336; /* Red for confirm (delete) */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.modalConfirmButton:hover {
+  background-color: #D32F2F;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.modalCancelButton { /* Added: Cancel button in modal */
+  background-color: #9E9E9E; /* Grey for cancel */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.modalCancelButton:hover {
+  background-color: #757575;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeInScale { /* Added: Keyframes for modal animation */
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) { /* Added: Media query for responsiveness */
+  .accountPage {
+    flex-direction: column;
+  }
+
+  .accountSidebar {
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 0.15rem 0.3rem rgba(0, 0, 0, 0.08);
+  }
+
+  .sidebarNav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .sidebarNav li {
+    margin-bottom: 0;
+  }
+
+  .sidebarLink,
+  .logoutButton {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .sidebarIcon {
+    margin-right: 0.4rem;
+    font-size: 1rem;
+  }
+
+  .accountContent {
+    padding: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .welcomeMessage,
+  .accountSummary p,
+  .orderItem p,
+  .profileInfo p,
+  .paymentItem p,
+  .addressCard p {
+    font-size: 1rem;
+  }
+
+  .editButton, .saveButton, .cancelButton, .deleteButton,
+  .addPaymentButton, .addAddressButton,
+  .modalConfirmButton, .modalCancelButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .paymentItem, .addressCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .paymentActions, .addressActions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .modalContent {
+    padding: 1.5rem;
+  }
+
+  .modalMessage {
+    font-size: 1rem;
+  }
+}

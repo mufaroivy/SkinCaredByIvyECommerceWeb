@@ -1,0 +1,344 @@
+/* src/components/SkinTypeSection.module.css */
+
+.container {
+  padding: 3rem 2rem;
+  background-color: #fcfcfc;
+  margin-bottom: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', sans-serif;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #e91e63; /* Pink title */
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #f48fb1; /* Lighter pink underline */
+  border-radius: 2px;
+}
+
+.categorySection {
+    margin-bottom: 3rem; /* Space between different categories */
+    padding-top: 1.5rem; /* Padding before the category title */
+    border-top: 1px solid #eee; /* Subtle separator */
+}
+
+.categorySection:first-child {
+    border-top: none; /* No separator for the first category */
+    padding-top: 0;
+}
+
+.categoryTitle {
+    font-size: 1.8rem;
+    color: #3f51b5; /* Blue category title */
+    text-align: left;
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem;
+    border-left: 4px solid #f48fb1; /* Pink accent bar */
+}
+
+
+.productList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.productCard {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+.productImage {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.productName {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.productDescription {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    line-height: 1.4;
+    min-height: 40px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.productPrice {
+  font-size: 1.2rem;
+  color: #e91e63; /* Pink price */
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* NEW: Quantity Control Styles */
+.quantityControl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem; /* Space between quantity and Add to Cart button */
+    width: 100%; /* Ensure it spans the card width */
+    max-width: 150px; /* Limit width for aesthetics */
+    align-self: center; /* Center the control within the card body */
+}
+
+.quantityButton {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.quantityButton:hover {
+    background-color: #e0e0e0;
+    border-color: #999;
+}
+
+.quantity {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    min-width: 25px; /* Ensure space for quantity number */
+    text-align: center;
+}
+
+
+.addToCartButton {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 180px;
+  align-self: center;
+}
+
+.addToCartButton:hover {
+  background-color: #43A047; /* Darker green */
+  transform: translateY(-2px);
+}
+
+/* Custom Confirmation Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  animation: fadeInScale 0.3s ease-out;
+}
+
+.modalMessage {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.modalConfirmButton {
+  background-color: #4CAF50; /* Green for confirm */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.modalConfirmButton:hover {
+  background-color: #43A047;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.modalCancelButton {
+  background-color: #9E9E9E; /* Grey for cancel */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.modalCancelButton:hover {
+  background-color: #757575;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .categoryTitle {
+    font-size: 1.5rem;
+  }
+
+  .productList {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .productCard {
+    padding: 1rem;
+  }
+
+  .productImage {
+    max-width: 100px;
+  }
+
+  .productName {
+    font-size: 1.1rem;
+  }
+
+  .productDescription {
+    font-size: 0.75rem;
+    min-height: 25px;
+  }
+
+  .productPrice {
+    font-size: 1rem;
+  }
+
+  .quantityControl { /* Responsive adjustment for quantity control */
+    max-width: 120px;
+    gap: 0.3rem;
+  }
+
+  .quantityButton { /* Responsive adjustment for quantity buttons */
+    width: 25px;
+    height: 25px;
+    font-size: 1rem;
+  }
+
+  .quantity { /* Responsive adjustment for quantity number */
+    font-size: 0.9rem;
+  }
+
+  .addToCartButton {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .modalContent {
+    padding: 1.5rem;
+  }
+
+  .modalMessage {
+    font-size: 1rem;
+  }
+
+  .modalConfirmButton,
+  .modalCancelButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}

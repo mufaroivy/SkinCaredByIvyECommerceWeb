@@ -1,0 +1,11 @@
+.footer {
+  background-color: #f8f8f8; /* Light grey background */
+  color: #555; /* Dark grey text */
+  padding: 1rem 2rem; /* Add some padding around the content */
+  text-align: center; /* Center the text */
+  border-top: 1px solid #eee; /* Add a subtle top border */
+}
+
+.copyright {
+  font-size: 0.9rem; /* Slightly smaller font size */
+}

@@ -1,0 +1,85 @@
+.welcomeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-color: #f8f0fb; /* Light purple background */
+}
+
+.welcomeMessage {
+  background-color: white;
+  padding: 4rem; /* Increased padding */
+  border-radius: 1rem; /* More rounded corners */
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.08); /* Subtler shadow */
+  text-align: center;
+  max-width: 80%; /* Added max width for responsiveness */
+}
+
+.welcomeMessage h1 {
+  font-size: 3rem; /* Larger heading */
+  color: #e91e63; /* Pink heading */
+  margin-bottom: 1.5rem; /* Increased margin */
+  letter-spacing: -0.02em;
+}
+
+.firstName {
+  color: #4a90e2; /* Light blue for the first name */
+  font-weight: 600; /* Make the name bold */
+}
+
+.welcomeMessage p {
+  font-size: 1.2rem; /* Slightly larger paragraph text */
+  color: #777; /* Darker gray, but still soft */
+  margin-bottom: 2.5rem; /* Increased margin */
+  line-height: 1.7; /* Improved line height for readability */
+}
+
+.enterButton {
+  background-color: #ba68c8; /* Purple button */
+  color: white;
+  border: none;
+  padding: 1.2rem 2.5rem; /* Increased button padding */
+  border-radius: 0.5rem; /* More rounded button */
+  cursor: pointer;
+  font-size: 1.2rem; /* Larger button text */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05); /* Very subtle shadow */
+}
+
+.enterButton:hover {
+  background-color: #ab47bc; /* Darker purple on hover */
+  transform: translateY(-2px); /* Slight upward movement on hover */
+  box-shadow: 0 0.75rem 1.25rem rgba(0, 0, 0, 0.07); /* Increased shadow on hover */
+}
+
+.enterButton:active {
+  transform: translateY(0); /* No movement on active */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05); /* Smaller shadow on active */
+}
+
+/* Add animations if you like */
+.welcomeMessage {
+  animation: fadeIn 1s ease-in-out, pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.04); /* Subtle pulse */
+  }
+}

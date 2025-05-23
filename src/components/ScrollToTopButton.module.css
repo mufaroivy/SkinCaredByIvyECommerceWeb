@@ -1,0 +1,35 @@
+.scrollToTopButton {
+  position: fixed; /* Fixes button position on the screen */
+  bottom: 2rem; /* Distance from the bottom of the viewport */
+  right: 2rem; /* Distance from the right of the viewport */
+  background-color: #e91e63; /* Pink background, matching theme */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Makes the button round */
+  width: 50px; /* Fixed width */
+  height: 50px; /* Fixed height for a perfect circle */
+  font-size: 1.5rem; /* Size of the arrow icon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+  z-index: 999; /* Ensure it's above most content but below modals */
+}
+
+.scrollToTopButton:hover {
+  background-color: #c2185b; /* Darker pink on hover */
+  transform: translateY(-2px) scale(1.05); /* Slight lift and scale on hover */
+}
+
+/* Responsive adjustments for the scroll-to-top button */
+@media (max-width: 768px) {
+  .scrollToTopButton {
+    bottom: 1.5rem; /* Adjust position for smaller screens */
+    right: 1.5rem;
+    width: 45px; /* Slightly smaller on mobile */
+    height: 45px;
+    font-size: 1.3rem;
+  }
+}
